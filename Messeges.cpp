@@ -290,8 +290,7 @@ namespace Lab2 {
         std::cout << "Curve angle: " << ep->curvRadiusOfAngle(angle) << std::endl;
         return 0;
     }
-
-    //понять, как выбирать тип класса
+    
     int D_Type_Of_Epycycloid(Epycycloid *&ep){
         if (ep == nullptr) {
             std::cout << "The Epycycloid is empty! Create new!" << std::endl;
@@ -303,10 +302,14 @@ namespace Lab2 {
 
         if (rSmall == dist){
             std::cout << "SIMPLE" << std::endl;
+            ep->type = Epycycloid::Types::SIMPLE;
+            
         } else if(rSmall > dist){
             std::cout << "SHORT" << std::endl;
+            ep->type = Epycycloid::Types::SHORT;
         } else if (rSmall < dist){
             std::cout << "LONG" << std::endl;
+            ep->type = Epycycloid::Types::LONG;
         }
 
 
